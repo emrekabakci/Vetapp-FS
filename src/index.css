@@ -3,13 +3,30 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #d4d4f8;
 }
+
+.component{
+  text-align: center;
+  padding-right: 200px;
+  padding-left: 200px;
+}
+
+
+.table thead th {
+  width: calc(100% / 5); 
+}
+
+.table tbody td {
+  width: calc(100% / 5); 
+}
+
 
 nav {
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #9494f8;
   color: white;
 }
 
@@ -36,6 +53,47 @@ nav .dropdown {
 
 .appointment-management {
   padding: 20px;
+}
+
+h1{
+  color: rgb(56, 56, 56);
+}
+
+.header{
+  background-color: white;
+  border-radius: 15px;
+}
+
+button{
+  background-color: #9494f8;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  padding: 5px;
+  margin-left: 10px;
+  transition: ease 0.3s;
+}
+
+button:hover{
+  background-color: #7a7aff;
+  transition: ease 0.3s;
+}
+input{
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+input:hover{
+  border-radius: 3px;
+  border: 1px solid #646464;
+  transition: ease 0.3s;
+}
+
+select{
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 5px;
 }
 
 .appointment-management .form-group {
