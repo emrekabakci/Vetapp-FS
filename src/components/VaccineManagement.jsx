@@ -25,7 +25,7 @@ const VaccineManagement = () => {
 
     const fetchVaccinations = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/vaccinations');
+            const response = await axios.get('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/vaccinations');
             setVaccinations(Array.isArray(response.data.content) ? response.data.content : []);
         } catch (error) {
             toast.error('Failed to fetch vaccinations.');
@@ -35,7 +35,7 @@ const VaccineManagement = () => {
 
     const fetchAnimals = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/animals');
+            const response = await axios.get('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/animals');
             setAnimals(Array.isArray(response.data.content) ? response.data.content : []);
         } catch (error) {
             toast.error('Failed to fetch animals.');
@@ -52,7 +52,7 @@ const VaccineManagement = () => {
                 protectionFinishDate,
                 animalWithoutCustomer: { id: selectedAnimalId }
             };
-            await axios.post('http://localhost:8080/api/v1/vaccinations', vaccineRequest);
+            await axios.post('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/vaccinations', vaccineRequest);
             toast.success('Vaccine created successfully!');
             fetchVaccinations();
             resetForm();
@@ -65,7 +65,7 @@ const VaccineManagement = () => {
 
     const handleDeleteVaccine = async (vaccineId) => {
         try {
-            await axios.delete(`http://localhost:8080/api/v1/vaccinations/${vaccineId}`);
+            await axios.delete(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/vaccinations/${vaccineId}`);
             toast.success('Vaccine deleted successfully!');
             fetchVaccinations();
         } catch (error) {
@@ -83,7 +83,7 @@ const VaccineManagement = () => {
                 protectionFinishDate,
                 animalWithoutCustomer: { id: selectedAnimalId }
             };
-            await axios.put(`http://localhost:8080/api/v1/vaccinations/${vaccineId}`, vaccineRequest);
+            await axios.put(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/vaccinations/${vaccineId}`, vaccineRequest);
             toast.success('Vaccine updated successfully!');
             fetchVaccinations();
             setEditVaccineId(null);
@@ -118,7 +118,7 @@ const VaccineManagement = () => {
 
     const handleSearchByAnimalId = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/v1/vaccinations/searchByAnimal?id=${searchedAnimalId}`);
+            const response = await axios.get(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/vaccinations/searchByAnimal?id=${searchedAnimalId}`);
             setVaccinations(Array.isArray(response.data.content) ? response.data.content : []);
         } catch (error) {
             toast.error('Failed to fetch vaccinations by animal ID.');
@@ -128,7 +128,7 @@ const VaccineManagement = () => {
 
     const handleSearchByVaccinationRange = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/v1/vaccinations/searchByVaccinationRange?startDate=${startDate}&endDate=${endDate}`);
+            const response = await axios.get(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/vaccinations/searchByVaccinationRange?startDate=${startDate}&endDate=${endDate}`);
             setVaccinations(Array.isArray(response.data.content) ? response.data.content : []);
         } catch (error) {
             toast.error('Failed to fetch vaccinations by date range.');

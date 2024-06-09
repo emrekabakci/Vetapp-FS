@@ -26,7 +26,7 @@ const AppointmentsManagement = () => {
 
     const fetchAppointments = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/appointments');
+            const response = await axios.get('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/appointments');
             setAppointments(Array.isArray(response.data.content) ? response.data.content : []);
         } catch (error) {
             toast.error('Failed to fetch appointments.');
@@ -36,7 +36,7 @@ const AppointmentsManagement = () => {
 
     const fetchDoctors = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/doctors'); 
+            const response = await axios.get('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/doctors'); 
             setDoctors(Array.isArray(response.data.content) ? response.data.content : []);
         } catch (error) {
             toast.error('Failed to fetch doctors.');
@@ -46,7 +46,7 @@ const AppointmentsManagement = () => {
 
     const fetchAnimals = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/animals');
+            const response = await axios.get('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/animals');
             setAnimals(Array.isArray(response.data.content) ? response.data.content : []);
         } catch (error) {
             toast.error('Failed to fetch animals.');
@@ -62,7 +62,7 @@ const AppointmentsManagement = () => {
                 animal: { id: animalId }
             };
             console.log('POST request to /api/v1/appointments with data:', appointmentRequest);
-            await axios.post('http://localhost:8080/api/v1/appointments', appointmentRequest);
+            await axios.post('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/appointments', appointmentRequest);
             toast.success('Appointment created successfully!');
             fetchAppointments();
             resetForm();
@@ -76,7 +76,7 @@ const AppointmentsManagement = () => {
     const handleDeleteAppointment = async (appointmentId) => {
         try {
             console.log(`DELETE request to /api/v1/appointments/${appointmentId}`);
-            await axios.delete(`http://localhost:8080/api/v1/appointments/${appointmentId}`);
+            await axios.delete(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/appointments/${appointmentId}`);
             toast.success('Appointment deleted successfully!');
             fetchAppointments();
         } catch (error) {
@@ -93,7 +93,7 @@ const AppointmentsManagement = () => {
                 animal: { id: animalId }
             };
             console.log(`PUT request to /api/v1/appointments/${appointmentId} with data:`, appointmentRequest);
-            await axios.put(`http://localhost:8080/api/v1/appointments/${appointmentId}`, appointmentRequest);
+            await axios.put(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/appointments/${appointmentId}`, appointmentRequest);
             toast.success('Appointment updated successfully!');
             fetchAppointments();
             setEditAppointmentId(null);
@@ -124,7 +124,7 @@ const AppointmentsManagement = () => {
 
     const handleSearchByDoctorAndDateRange = async () => {
         try {
-            const url = `http://localhost:8080/api/v1/appointments/searchByDoctorAndDateRange?id=${searchedDoctorId}&startDate=${startDate}&endDate=${endDate}`;
+            const url = `https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/appointments/searchByDoctorAndDateRange?id=${searchedDoctorId}&startDate=${startDate}&endDate=${endDate}`;
             console.log(`GET request to ${url}`);
             const response = await axios.get(url);
             setAppointments(Array.isArray(response.data.content) ? response.data.content : []);
@@ -136,7 +136,7 @@ const AppointmentsManagement = () => {
 
     const handleSearchByAnimalAndDateRange = async () => {
         try {
-            const url = `http://localhost:8080/api/v1/appointments/searchByAnimalAndDateRange?id=${searchedAnimalId}&startDate=${startDate}&endDate=${endDate}`;
+            const url = `https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/appointments/searchByAnimalAndDateRange?id=${searchedAnimalId}&startDate=${startDate}&endDate=${endDate}`;
             console.log(`GET request to ${url}`);
             const response = await axios.get(url);
             setAppointments(Array.isArray(response.data.content) ? response.data.content : []);

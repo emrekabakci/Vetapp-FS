@@ -26,7 +26,7 @@ const AnimalManagement = () => {
 
     const fetchCustomers = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/customers');
+            const response = await axios.get('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/customers');
             setCustomers(Array.isArray(response.data.content) ? response.data.content : []);
         } catch (error) {
             toast.error('Failed to fetch customers.');
@@ -36,7 +36,7 @@ const AnimalManagement = () => {
 
     const fetchAnimals = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/animals');
+            const response = await axios.get('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/animals');
             console.log(response.data);
             setAnimals(Array.isArray(response.data.content) ? response.data.content : []);
         } catch (error) {
@@ -56,7 +56,7 @@ const AnimalManagement = () => {
                 colour,
                 customer: { id: customer }
             };
-            await axios.post('http://localhost:8080/api/v1/animals', animalRequest);
+            await axios.post('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/animals', animalRequest);
             toast.success('Animal created successfully!');
             fetchAnimals();
             resetForm();
@@ -69,7 +69,7 @@ const AnimalManagement = () => {
 
     const handleDeleteAnimal = async (animalId) => {
         try {
-            await axios.delete(`http://localhost:8080/api/v1/animals/${animalId}`);
+            await axios.delete(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/animals/${animalId}`);
             toast.success('Animal deleted successfully!');
             fetchAnimals();
         } catch (error) {
@@ -89,7 +89,7 @@ const AnimalManagement = () => {
                 colour,
                 customer: { id: customer }
             };
-            await axios.put(`http://localhost:8080/api/v1/animals/${animalId}`, animalRequest);
+            await axios.put(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/animals/${animalId}`, animalRequest);
             toast.success('Animal updated successfully!');
             fetchAnimals();
             setEditAnimalId(null);
@@ -128,7 +128,7 @@ const AnimalManagement = () => {
 
     const handleSearchByCustomer = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/v1/animals/searchByCustomer?customerName=${searchedCustomer}`);
+            const response = await axios.get(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/animals/searchByCustomer?customerName=${searchedCustomer}`);
             console.log(response.data);
             setAnimals(Array.isArray(response.data.content) ? response.data.content : []);
         } catch (error) {
@@ -139,7 +139,7 @@ const AnimalManagement = () => {
 
     const handleSearchByAnimalName = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/v1/animals/searchByName?name=${searchedAnimalName}`);
+            const response = await axios.get(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/animals/searchByName?name=${searchedAnimalName}`);
             console.log(response.data);
             setAnimals(Array.isArray(response.data.content) ? response.data.content : []);
         } catch (error) {

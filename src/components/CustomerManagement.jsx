@@ -20,7 +20,7 @@ const CustomerManagement = () => {
 
     const fetchCustomers = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/customers');
+            const response = await axios.get('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/customers');
             setCustomers(response.data.content);
         } catch (error) {
             toast.error('Failed to fetch customers.');
@@ -30,7 +30,7 @@ const CustomerManagement = () => {
 
     const searchCustomersByName = async (name) => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/v1/customers/searchByName?name=${name}`);
+            const response = await axios.get(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/customers/searchByName?name=${name}`);
             setCustomers(response.data.content);
         } catch (error) {
             toast.error('Failed to search customers.');
@@ -40,7 +40,7 @@ const CustomerManagement = () => {
 
     const handleCreateCustomer = async () => {
         try {
-            const response = await axios.post('http://localhost:8080/api/v1/customers', {
+            const response = await axios.post('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/customers', {
                 name,
                 phone,
                 email,
@@ -58,7 +58,7 @@ const CustomerManagement = () => {
 
     const handleDeleteCustomer = async (customerId) => {
         try {
-            await axios.delete(`http://localhost:8080/api/v1/customers/${customerId}`);
+            await axios.delete(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/customersapi/v1/customers/${customerId}`);
             toast.success('Customer deleted successfully!');
             fetchCustomers();
         } catch (error) {
@@ -73,7 +73,7 @@ const CustomerManagement = () => {
 
     const handleUpdateCustomer = async () => {
         try {
-            await axios.put(`http://localhost:8080/api/v1/customers/${editingCustomer.id}`, {
+            await axios.put(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/customers/${editingCustomer.id}`, {
                 name: editingCustomer.name,
                 phone: editingCustomer.phone,
                 email: editingCustomer.email,

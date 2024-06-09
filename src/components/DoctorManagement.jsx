@@ -25,7 +25,7 @@ const DoctorManagement = () => {
 
     const fetchDoctors = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/doctors');
+            const response = await axios.get('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/doctors');
             setDoctors(response.data.content);
         } catch (error) {
             toast.error('Failed to fetch doctors.');
@@ -35,7 +35,7 @@ const DoctorManagement = () => {
 
     const fetchAvailableDates = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/available-dates');
+            const response = await axios.get('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/available-dates');
             setAvailableDates(response.data.content);
         } catch (error) {
             toast.error('Failed to fetch available dates.');
@@ -52,7 +52,7 @@ const DoctorManagement = () => {
                 address,
                 city
             };
-            await axios.post('http://localhost:8080/api/v1/doctors', doctorRequest);
+            await axios.post('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/doctors', doctorRequest);
             toast.success('Doctor created successfully!');
             fetchDoctors();
             setName('');
@@ -69,7 +69,7 @@ const DoctorManagement = () => {
 
     const handleDeleteDoctor = async (doctorId) => {
         try {
-            await axios.delete(`http://localhost:8080/api/v1/doctors/${doctorId}`);
+            await axios.delete(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/doctors/${doctorId}`);
             toast.success('Doctor deleted successfully!');
             fetchDoctors();
         } catch (error) {
@@ -87,7 +87,7 @@ const DoctorManagement = () => {
                 address,
                 city
             };
-            await axios.put(`http://localhost:8080/api/v1/doctors/${doctorId}`, doctorRequest);
+            await axios.put(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/doctors/${doctorId}`, doctorRequest);
             toast.success('Doctor updated successfully!');
             fetchDoctors();
             setEditDoctorId(null);
@@ -122,7 +122,7 @@ const DoctorManagement = () => {
                 workDay,
                 doctorId: selectedDoctorId
             };
-            await axios.post('http://localhost:8080/api/v1/available-dates', availableDateRequest);
+            await axios.post('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/available-dates', availableDateRequest);
             toast.success('Available date added successfully!');
             fetchAvailableDates();
             setWorkDay('');
@@ -140,7 +140,7 @@ const DoctorManagement = () => {
                 workDay,
                 doctorId: selectedDoctorId
             };
-            await axios.put(`http://localhost:8080/api/v1/available-dates/${availableDateId}`, availableDateRequest);
+            await axios.put(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/available-dates/${availableDateId}`, availableDateRequest);
             toast.success('Available date updated successfully!');
             fetchAvailableDates();
             setEditAvailableDateId(null);
@@ -155,7 +155,7 @@ const DoctorManagement = () => {
 
     const handleDeleteAvailableDate = async (availableDateId) => {
         try {
-            await axios.delete(`http://localhost:8080/api/v1/available-dates/${availableDateId}`);
+            await axios.delete(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/available-dates/${availableDateId}`);
             toast.success('Available date deleted successfully!');
             fetchAvailableDates();
         } catch (error) {

@@ -29,7 +29,7 @@ const ReportsManagement = () => {
 
     const fetchReports = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/reports');
+            const response = await axios.get('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/reports');
             console.log('Reports API Response:', response.data);
             setReports(Array.isArray(response.data.content) ? response.data.content : []);
         } catch (error) {
@@ -40,7 +40,7 @@ const ReportsManagement = () => {
 
     const fetchAppointments = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/appointments');
+            const response = await axios.get('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/appointments');
             console.log('Appointments API Response:', response.data);
             setAppointments(Array.isArray(response.data.content) ? response.data.content : []);
         } catch (error) {
@@ -57,7 +57,7 @@ const ReportsManagement = () => {
                 price,
                 appointmentId: selectedAppointmentId
             };
-            await axios.post('http://localhost:8080/api/v1/reports', reportRequest);
+            await axios.post('https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/reports', reportRequest);
             toast.success('Report created successfully!');
             fetchReports();
             resetForm();
@@ -70,7 +70,7 @@ const ReportsManagement = () => {
 
     const handleDeleteReport = async (reportId) => {
         try {
-            await axios.delete(`http://localhost:8080/api/v1/reports/${reportId}`);
+            await axios.delete(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/reports/${reportId}`);
             toast.success('Report deleted successfully!');
             fetchReports();
         } catch (error) {
@@ -87,7 +87,7 @@ const ReportsManagement = () => {
                 price,
                 appointmentId: selectedAppointmentId
             };
-            await axios.put(`http://localhost:8080/api/v1/reports/${reportId}`, reportRequest);
+            await axios.put(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/reports/${reportId}`, reportRequest);
             toast.success('Report updated successfully!');
             fetchReports();
             setEditReportId(null);
