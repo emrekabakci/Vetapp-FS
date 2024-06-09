@@ -150,7 +150,7 @@ const AppointmentsManagement = () => {
             <h2>Appointments Management</h2>
             <div className="form-group">
                 <label>Appointment Date</label>
-                <input type="date" className="form-control" value={appointmentDate} onChange={(e) => setAppointmentDate(e.target.value)} />
+                <input type="datetime-local" className="form-control" value={appointmentDate} onChange={(e) => setAppointmentDate(e.target.value)} />
             </div>
             <div className="form-group">
                 <label>Doctor</label>
