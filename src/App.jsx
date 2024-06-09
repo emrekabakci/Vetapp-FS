@@ -15,12 +15,12 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/Vetapp-FS" element={<Home />} />
-        <Route path="/appointments" element={<Appointments />} />
-        <Route path="/customers" element={<Customers />} />
-        <Route path="/animals" element={<Animals />} />
-        <Route path="/doctors" element={<Doctors />} />
-        <Route path="/vaccine" element={<Vaccine />} />
-        <Route path="/report" element={<Reports />} />
+        <Route path="/Vetapp-FS/appointments" element={<Appointments />} />
+        <Route path="/Vetapp-FS/customers" element={<Customers />} />
+        <Route path="/Vetapp-FS/animals" element={<Animals />} />
+        <Route path="/Vetapp-FS/doctors" element={<Doctors />} />
+        <Route path="/Vetapp-FS/vaccine" element={<Vaccine />} />
+        <Route path="/Vetapp-FS/report" element={<Reports />} />
       </Routes>
     </Router>
   );

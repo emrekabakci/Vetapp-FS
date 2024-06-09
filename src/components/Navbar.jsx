@@ -8,17 +8,17 @@ const Navbar = () => {
     <nav>
       <div className="left">
         <Link to="/Vetapp-FS"><img src="/logo.png" alt="Logo" className="logo" /></Link>
-        <Link to="/appointments">Appointment</Link>
-        <Link to="/report">Report</Link>
-        <Link to="/vaccine">Vaccine</Link>
+        <Link to="/Vetapp-FS/appointments">Appointment</Link>
+        <Link to="/Vetapp-FS/report">Report</Link>
+        <Link to="/Vetapp-FS/vaccine">Vaccine</Link>
       </div>
       <div className="right">
         <button onClick={() => setShowDropdown(!showDropdown)}>+</button>
         {showDropdown && (
           <div className="dropdown">
-            <Link to="/customers" >Customer</Link><br />
-            <Link to="/animals">Animal</Link><br />
-            <Link to="/doctors">Doctor</Link><br />
+            <Link to="/Vetapp-FS/customers" >Customer</Link><br />
+            <Link to="/Vetapp-FS/animals">Animal</Link><br />
+            <Link to="/Vetapp-FS/doctors">Doctor</Link><br />
           </div>
         )}
       </div>
