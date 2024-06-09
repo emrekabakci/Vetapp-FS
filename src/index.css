@@ -21,6 +21,9 @@ body {
   width: calc(100% / 5); 
 }
 
+.pet-img{
+  text-align: center;
+}
 
 nav {
   display: flex;
