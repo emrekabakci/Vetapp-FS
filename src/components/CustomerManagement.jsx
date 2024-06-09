@@ -58,7 +58,7 @@ const CustomerManagement = () => {
 
     const handleDeleteCustomer = async (customerId) => {
         try {
-            await axios.delete(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/customersapi/v1/customers/${customerId}`);
+            await axios.delete(`https://statistical-meagan-emrekabakci-205b6144.koyeb.app/api/v1/customers/${customerId}`);
             toast.success('Customer deleted successfully!');
             fetchCustomers();
         } catch (error) {
