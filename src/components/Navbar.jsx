@@ -16,9 +16,9 @@ const Navbar = () => {
         <button onClick={() => setShowDropdown(!showDropdown)}>+</button>
         {showDropdown && (
           <div className="dropdown">
-            <Link to="/add-customer">Customer</Link>
-            <Link to="/add-animal">Animal</Link>
-            <Link to="/add-doctor">Doctor</Link>
+            <Link to="/customers" >Customer</Link><br />
+            <Link to="/animals">Animal</Link><br />
+            <Link to="/doctors">Doctor</Link><br />
           </div>
         )}
       </div>
